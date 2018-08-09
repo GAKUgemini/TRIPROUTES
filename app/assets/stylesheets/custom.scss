@@ -177,3 +177,84 @@ form-control {
     }
   }
 }
+
+/*help pageのscss*/
+.features-boxed {
+  color:#313437;
+  background-color:#49d6ff;
+    .container {
+      .row4{
+        .self-introduction-box{
+          .box{
+            .my-information{
+              font-family: 'Noto Serif', serif;
+            }
+            .font{
+              font-family: 'Wendy One', sans-serif;
+            }
+            background-color: #fff;
+            padding:30px;
+            margin-bottom:30px;
+          }
+        }
+      }
+      .self-produce{
+        .self-produce{
+         .self-introduction{
+          font-family: 'Wendy One', sans-serif;
+         }
+        }
+      }
+      max-width: 1140px;
+      padding-right:15px;
+      padding-left:15px;
+      margin-right:auto;
+      margin-left:auto;
+    .features{
+      padding: 50px 0;
+}
+    .justify-content-center {
+      -ms-flex-pack:center!important;
+      justify-content:center!important;
+}
+    .row {
+      display:-ms-flexbox;
+      display:flex;
+      -ms-flex-wrap:wrap;
+      flex-wrap:wrap;
+      margin-right:-15px;
+      margin-left:-15px;
+}
+    .item {
+      text-align:center;
+      position: relative;
+      .box {
+        .name {
+          font-family: 'Wendy One', sans-serif;
+        }
+        .learn-more{
+          font-family: 'Wendy One', sans-serif;
+        }
+      }
+}
+
+
+      .intro {
+        h2 {
+          font-family: 'Wendy One', sans-serif;
+          margin-bottom:25px;
+          padding-top:25px;
+          font-size:24px;
+          font-weight:bold;
+          margin-bottom:40px;
+          padding-top:40px;
+          color:inherit;
+          h4 {
+            color: #7d8285;
+            margin-top: 0;
+            margin-bottom: 1rem;
+}
+}
+}
+}
+}
