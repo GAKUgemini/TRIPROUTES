@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
    get 'scores/new'
+   post 'scores/create'
    get 'favorites/index'
    
    get 'sessions/new'
