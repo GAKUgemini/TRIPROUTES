@@ -14,8 +14,7 @@ class ScoresController < ApplicationController
     end
 
     def display
-        @player = Player.find[:id]
-
+        @player = Player.last
     end
 
     private

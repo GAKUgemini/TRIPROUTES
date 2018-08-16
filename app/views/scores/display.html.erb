@@ -9,18 +9,17 @@
             <table class="table table-bordered table-hover">
                 <thead>
                     <tr>
-                        <th><%=@player.baseline_player%></th>
-                        <%binding.pry%>
-                        <th class="text-center">VS</th>
-                        <th>Username</th>
+                        <th class="text-center info">baseline_player　<strong><%=@player.baseline_player%></strong></th>
+                        <th class="text-center"><strong>VS</strong></th>
+                        <th class="text-center danger">baseline_player_opponent　<strong><%=@player.baseline_player_opponent%></strong></th>
                     </tr>
                 </thead>
                 <thead>
                     <tr>
                         
-                        <th>FirstName</th>
+                        <th class="text-center info">net_player　<strong><%=@player.net_player%></strong></th>
                         <th class="text-center"></th>
-                        <th>Username</th>
+                        <th class="text-center danger">net_player_opponent　<strong><%=@player.net_player_opponent%></strong></th>
                     </tr>
                 </thead>
                 <tbody>
