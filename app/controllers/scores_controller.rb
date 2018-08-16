@@ -6,11 +6,14 @@ class ScoresController < ApplicationController
     def create
         @player = Player.new(player_params)
         if @player.save
-            redirect_to root_path, notice: '登録が完了しました'
+            redirect_to scores_display_path, notice: '登録が完了しました'
         else
             flash.now[:alert] = "登録に失敗しました"
             render :new
         end
+    end
+
+    def display
 
     end
 
