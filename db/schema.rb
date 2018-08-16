@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_08_16_070736) do
+ActiveRecord::Schema.define(version: 2018_08_16_074653) do
 
   create_table "favorites", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.integer "user_id"
@@ -26,6 +26,8 @@ ActiveRecord::Schema.define(version: 2018_08_16_070736) do
     t.string "net_player_opponent"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "Group"
+    t.string "Group_opponent"
   end
 
   create_table "topics", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
