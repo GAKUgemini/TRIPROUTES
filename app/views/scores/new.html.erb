@@ -1,7 +1,7 @@
 <div class="container">
     <div class="row">
-        <div class="col-md-4 col-md-offset-4">
-            <h1 class="text-center">Hello Would!!!<h1>
+        <div class="col-md-8 col-md-offset-2">
+            <h1 class="text-center">This is page that enter player's basic information<h1>
         </div>
     </div>
     <div class="row">
@@ -9,12 +9,16 @@
             <h3 class="text-center">・Player・</h3>
                 <%= form_for @player, url: scores_create_path do |f| %>
                     <div class="form-group">
+                        <%= f.label :Group, class: 'text-white' %>
+                        <%= f.text_field :Group, class: 'form-control' %>
+                    </div>
+                    <div class="form-group">
                         <%= f.label :baseline_player, class: 'text-white' %>
                         <%= f.text_field :baseline_player, class: 'form-control' %>
                     </div>
                     <div class="form-group">
                         <%= f.label :net_player, class: 'text-white' %>
-                        <%= f.password_field :net_player, class: 'form-control' %>
+                        <%= f.text_field :net_player, class: 'form-control' %>
                     </div>
         </div>
         <div class="col-md-2">
@@ -24,14 +28,23 @@
         <div class="col-md-5">
             <h3 class="text-center">・Opponent・</h3>
                     <div class="form-group">
-                        <%= f.label :baseline_player, class: 'text-white' %>
-                        <%= f.text_field :baseline_player, class: 'form-control' %>
+                        <%= f.label :Group_opponent, class: 'text-white' %>
+                        <%= f.text_field :Group_opponent, class: 'form-control' %>
                     </div>
                     <div class="form-group">
-                        <%= f.label :net_player, class: 'text-white' %>
-                        <%= f.password_field :net_player, class: 'form-control' %>
+                        <%= f.label :baseline_player_opponent, class: 'text-white' %>
+                        <%= f.text_field :baseline_player_opponent, class: 'form-control' %>
+                    </div>
+                    <div class="form-group">
+                        <%= f.label :net_player_opponent, class: 'text-white' %>
+                        <%= f.text_field :net_player_opponent, class: 'form-control' %>
                     </div>
                 <% end %>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6 col-md-offset-3 box">
+
         </div>
     </div>
 </div>
