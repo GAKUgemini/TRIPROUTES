@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  baseline_player: MyString
+  net_player: MyString
+  baseline_player_opponent: MyString
+  net_player_opponent: MyString
+
+two:
+  baseline_player: MyString
+  net_player: MyString
+  baseline_player_opponent: MyString
+  net_player_opponent: MyString
