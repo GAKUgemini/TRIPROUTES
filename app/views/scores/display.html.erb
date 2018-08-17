@@ -8,10 +8,12 @@
         <div class="col-md-4">
         </div>
         <div class="col-md-2 text-center">
-            <select><option>○</option><option>×</option></select>
+            <select id="name1"><option>○</option><option>×</option></select>
+            <button id="form-button1" type="button" class="btn btn-default btn-info btn-xs">Add</button>
         </div>
         <div class="col-md-2 text-center">
-            <button type="button" class="btn btn-default btn-info btn-xs">Add</button>
+            <select id="name2"><option>○</option><option>×</option></select>
+            <button id="form-button2" type="button" class="btn btn-default btn-danger btn-xs">Add</button>
         </div>
         <div class="col-md-4">
         </div>
@@ -37,9 +39,9 @@
                 <tbody>
                     <tr>
                         
-                            <td>S</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+                            <td>S</td><td><div id="form-text1" class="text-center"></div></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
                             <td rowspan="2" class="text-center">-(2)-</td>
-                            <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>S</td>
+                            <td><div id="form-text2" class="text-center"></div></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>S</td>
                     </tr>
                     <tr>
                         
@@ -122,3 +124,12 @@
         </div>
     </div>
 </div>
+
+<script>
+    document.getElementById("form-button1").onclick = function() {
+        document.getElementById("form-text1").innerHTML = document.getElementById("name1").value;}
+</script>
+<script>
+    document.getElementById("form-button2").onclick = function() {
+        document.getElementById("form-text2").innerHTML = document.getElementById("name2").value;}
+</script>
