@@ -1,0 +1,33 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  game_one: MyText
+  game_two: MyText
+  game_three: MyText
+  game_four: MyText
+  game_five: MyText
+  game_six: MyText
+  game_final: MyText
+  game_one_opponent: MyText
+  game_two_opponent: MyText
+  game_three_opponent: MyText
+  game_four_opponent: MyText
+  game_five_opponent: MyText
+  game_six_opponent: MyText
+  game_final_opponent: MyText
+
+two:
+  game_one: MyText
+  game_two: MyText
+  game_three: MyText
+  game_four: MyText
+  game_five: MyText
+  game_six: MyText
+  game_final: MyText
+  game_one_opponent: MyText
+  game_two_opponent: MyText
+  game_three_opponent: MyText
+  game_four_opponent: MyText
+  game_five_opponent: MyText
+  game_six_opponent: MyText
+  game_final_opponent: MyText
