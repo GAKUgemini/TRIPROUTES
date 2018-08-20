@@ -8,8 +8,8 @@
     var i = 0;
     var j = 0;
     $(".next-button").click(function(){
-       var prejflag = 1;
-       j = j + prejflag;
+        var j_increment = 1;
+        j = j+j_increment;
     });
     $(".cell"+game_count[i]+"-"+point_count[j]).click(function(){
         if(flg == "off"){
