@@ -13,7 +13,7 @@
     });
     $(".cell"+game_count[i]+"-"+point_count[j]).click(function(){
         if(flg == "off"){
-            $(this).text("○");
+            $(".cell"+game_count[i]+"-"+point_count[j]).text("○");
             flg = "on";
             $(".opponent_cell"+game_count[i]+"-"+point_count[j]).text("×");
             $(".points").text("1")
