@@ -11,13 +11,19 @@
     var j = 0;
     var first_click = "off";
     var opponent_first_click = "off";
+    var button_flg = "off";
     $(".next-button").click(function(){
         var j_increment = 1;
         j = j+j_increment;
+        button_flg = "off";
     });
     $(".save-button").click(function(){
         first_click = "off";
         opponent_first_click = "off";
+        button_flg = "on";
+        console.log(button_flg);
+        $(".next-button").show();
+        $(".back-button").show();
     });
 
     $(".cell"+game_count_cel[i]+"-"+point_count_cel[j]).click(function(){
@@ -73,5 +79,10 @@
         $(".select_recive").hide();
         $(".opponent_select_service").hide();
     });
+
+    if(button_flg == "off"){
+        $(".next-button").hide();
+        $(".back-button").hide();
+    }
 
   });
