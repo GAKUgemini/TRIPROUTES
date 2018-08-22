@@ -28,6 +28,8 @@
             $(".opponent_cell"+game_count_cel[i]+"-"+point_count_cel[j]).text("×");
             points = $(".circle").length;
             if(first_click == "off"){
+                $(".opponent_cell"+game_count_cel[i]+"-"+point_count_cel[j]).removeClass("opponent_circle");
+                opponent_points = $(".opponent_circle").length;
                 $(".points").text(points);
                 $(".opponent_points").text(opponent_points);
                 first_click = "on";
@@ -57,6 +59,11 @@
                 $(".points").text(points);
                 $(".opponent_points").text(opponent_points);
             }
+        }
+        if(points == 4 && opponent_points == 0 || points == 0 && opponent_points == 4 || points == 4 && opponent_points == 1 || points == 1 && opponent_points == 4 || points == 4 && opponent_points == 2 || points == 2 && opponent_points == 4 || points >= 3 && opponent_points >= 3 && points - opponent_points == 2 || opponent_points - points == 2){
+            var i_increment = 1;
+            i = i+i_increment;
+            j = 0;
         }
     });
     
