@@ -12,21 +12,33 @@
     var first_click = "off";
     var opponent_first_click = "off";
     var button_flg = "off";
+    $(".cell"+game_count_cel[i]+"-"+point_count_cel[j]).css('background', 'rgba(150, 246, 253, 0.993)');
+    $(".opponent_cell"+game_count_cel[i]+"-"+point_count_cel[j]).css('background', '#ff84d0'); 
     $(".next-button").click(function(){
+        $(".keep-button").show();
         var j_increment = 1;
         j = j+j_increment;
         button_flg = "off";
+        $(".cell"+game_count_cel[i]+"-"+point_count_cel[j]).css('background', 'rgba(150, 246, 253, 0.993)');
+        $(".opponent_cell"+game_count_cel[i]+"-"+point_count_cel[j]).css('background', '#ff84d0');
     });
     $(".save-button").click(function(){
+        $(".cell"+game_count_cel[i]+"-"+point_count_cel[j]).css('background', '#ffffff');
+        $(".opponent_cell"+game_count_cel[i]+"-"+point_count_cel[j]).css('background', '#ffffff');
         first_click = "off";
         opponent_first_click = "off";
         button_flg = "on";
         console.log(button_flg);
         $(".next-button").show();
         $(".back-button").show();
+        $(".keep-button").hide();
+        $(".save-button").hide();
     });
 
-    $(".cell"+game_count_cel[i]+"-"+point_count_cel[j]).click(function(){
+    $(".keep-button").click(function(){
+        $(".next-button").hide();
+        $(".back-button").hide();
+        $(".save-button").show();
         if(flg == "off"){
             $(".cell"+game_count_cel[i]+"-"+point_count_cel[j]).text("○");
             flg = "on";
@@ -80,9 +92,9 @@
         $(".opponent_select_service").hide();
     });
 
-    if(button_flg == "off"){
-        $(".next-button").hide();
-        $(".back-button").hide();
-    }
+    $(".next-button").hide();
+    $(".back-button").hide();
+    $(".save-button").hide();
+    
 
   });
