@@ -16,6 +16,8 @@ class ScoresController < ApplicationController
     def display
         @player = Player.last
         @point = Point.new
+        gon.points = []
+        gon.opponent_points = []
     end
 
     def update

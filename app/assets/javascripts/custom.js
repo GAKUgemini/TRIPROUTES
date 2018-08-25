@@ -54,7 +54,16 @@
         $(".back-button").show();
         $(".keep-button").hide();
         $(".save-button").hide();
+        if(flg == "on"){
+            gon.points.push("○")
+            gon.opponent_points.push("×")
         }
+        if(flg == "off"){
+            gon.points.push("×")
+            gon.opponent_points.push("○")
+        }
+        }
+        console.log(gon.points);
     });
 
     $(".keep-button").click(function(){
