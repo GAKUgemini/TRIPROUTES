@@ -33,6 +33,7 @@
             $(".opponent_cell"+game_count_cel[i]+"-"+point_count_cel[j]).css('background', '#ff84d0');
             first_click = "off";
             opponent_first_click = "off";
+            $(".game-button").hide();
             $(".keep-button").show();
     });
 
