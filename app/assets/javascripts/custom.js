@@ -24,14 +24,16 @@
     });
 
     $(".game-button").click(function(){
+        $(".cell"+game_count_cel[i]+"-"+point_count_cel[j]).css('background', '#ffffff');
+        $(".opponent_cell"+game_count_cel[i]+"-"+point_count_cel[j]).css('background', '#ffffff');
         var i_increment = 1;
             i = i+i_increment;
             j = 0;
-            $(".cell"+game_count_cel[i]+"-"+point_count_cel[j]).css('background', '#ffffff');
-            $(".opponent_cell"+game_count_cel[i]+"-"+point_count_cel[j]).css('background', '#ffffff');
-            console.log("cell"+game_count_cel[i]+"-"+point_count_cel[j]);
+            $(".cell"+game_count_cel[i]+"-"+point_count_cel[j]).css('background', 'rgba(150, 246, 253, 0.993)');
+            $(".opponent_cell"+game_count_cel[i]+"-"+point_count_cel[j]).css('background', '#ff84d0');
             first_click = "off";
             opponent_first_click = "off";
+            $(".keep-button").show();
     });
 
     $(".save-button").click(function(){
