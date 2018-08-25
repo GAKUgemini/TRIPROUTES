@@ -11,7 +11,6 @@
     var j = 0;
     var first_click = "off";
     var opponent_first_click = "off";
-    var button_flg = "off";
     var select_flg = "off";
     $(".cell"+game_count_cel[i]+"-"+point_count_cel[j]).css('background', 'rgba(150, 246, 253, 0.993)');
     $(".opponent_cell"+game_count_cel[i]+"-"+point_count_cel[j]).css('background', '#ff84d0'); 
@@ -23,37 +22,36 @@
         $(".cell"+game_count_cel[i]+"-"+point_count_cel[j]).css('background', 'rgba(150, 246, 253, 0.993)');
         $(".opponent_cell"+game_count_cel[i]+"-"+point_count_cel[j]).css('background', '#ff84d0');
     });
+
+    $(".game-button").click(function(){
+        var i_increment = 1;
+            i = i+i_increment;
+            j = 0;
+            $(".cell"+game_count_cel[i]+"-"+point_count_cel[j]).css('background', '#ffffff');
+            $(".opponent_cell"+game_count_cel[i]+"-"+point_count_cel[j]).css('background', '#ffffff');
+            console.log("cell"+game_count_cel[i]+"-"+point_count_cel[j]);
+            first_click = "off";
+            opponent_first_click = "off";
+    });
+
     $(".save-button").click(function(){
-        if(points == 4 && opponent_points == 0 || points == 0 && opponent_points == 4 ){
-            var i_increment = 1;
-            i = i+i_increment;
-            j = 0;
+        if(points == 4 && opponent_points == 0 || points == 0 && opponent_points == 4 || points == 4 && opponent_points == 1 || points == 1 && opponent_points == 4 || points == 2 && opponent_points == 4 || points == 4 && opponent_points == 2 || points >= 3 && opponent_points >= 3 && (points - opponent_points == 2 || opponent_points - points == 2)){
+            $(".game-button").show();
+            $(".next-button").hide();
+            $(".back-button").hide();
+            $(".keep-button").hide();
+            $(".save-button").hide();
         }
-        else if(points == 4 && opponent_points == 1 || points == 1 && opponent_points == 4){
-            var i_increment = 1;
-            i = i+i_increment;
-            j = 0;
-        }
-        else if(points == 2 && opponent_points == 4 || points == 4 && opponent_points == 2){
-            var i_increment = 1;
-            i = i+i_increment;
-            j = 0;
-        }
-        else if(points >= 3 && opponent_points >= 3 && (points - opponent_points == 2 || opponent_points - points == 2)){
-            var i_increment = 1;
-            i = i+i_increment;
-            j = 0;
-        }
+        else{
         $(".cell"+game_count_cel[i]+"-"+point_count_cel[j]).css('background', '#ffffff');
         $(".opponent_cell"+game_count_cel[i]+"-"+point_count_cel[j]).css('background', '#ffffff');
         first_click = "off";
         opponent_first_click = "off";
-        button_flg = "on";
-        console.log(button_flg);
         $(".next-button").show();
         $(".back-button").show();
         $(".keep-button").hide();
         $(".save-button").hide();
+        }
     });
 
     $(".keep-button").click(function(){
@@ -168,4 +166,5 @@
     $(".next-button").hide();
     $(".back-button").hide();
     $(".save-button").hide();
+    $(".game-button").hide();
   });
