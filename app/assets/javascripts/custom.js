@@ -12,6 +12,7 @@
     var first_click = "off";
     var opponent_first_click = "off";
     var button_flg = "off";
+    var select_flg = "off";
     $(".cell"+game_count_cel[i]+"-"+point_count_cel[j]).css('background', 'rgba(150, 246, 253, 0.993)');
     $(".opponent_cell"+game_count_cel[i]+"-"+point_count_cel[j]).css('background', '#ff84d0'); 
     $(".next-button").click(function(){
@@ -101,9 +102,68 @@
     });
     
     $(".select_service").click(function(){
-        $(".select_recive").hide();
-        $(".opponent_select_service").hide();
+        $(".select_service").css('background', '#7272729d');
+        $(".opponent_select_recive").css('background', '#7272729d');
+        $(".select_recive").css('background', '#ffffff');
+        $(".opponent_select_service").css('background', '#ffffff');
+        $(".select_recive2").css('background', '#7272729d');
+        $(".select_service2").css('background', '#ffffff');
+        $(".select_service3").css('background', '#7272729d');
+        $(".select_recive3").css('background', '#ffffff');
+        $(".select_recive4").css('background', '#7272729d');
+        $(".select_service4").css('background', '#ffffff');
+        $(".select_service5").css('background', '#7272729d');
+        $(".select_recive5").css('background', '#ffffff');
+        $(".select_recive6").css('background', '#7272729d');
+        $(".select_service6").css('background', '#ffffff');
+        $(".select_service7").css('background', '#7272729d');
+        $(".select_recive7").css('background', '#ffffff');
+        $(".opponent_select_service2").css('background', '#7272729d');
+        $(".opponent_select_recive2").css('background', '#ffffff');
+        $(".opponent_select_recive3").css('background', '#7272729d');
+        $(".opponent_select_service3").css('background', '#ffffff');
+        $(".opponent_select_service4").css('background', '#7272729d');
+        $(".opponent_select_recive4").css('background', '#ffffff');
+        $(".opponent_select_recive5").css('background', '#7272729d');
+        $(".opponent_select_service5").css('background', '#ffffff');
+        $(".opponent_select_service6").css('background', '#7272729d');
+        $(".opponent_select_recive6").css('background', '#ffffff');
+        $(".opponent_select_recive7").css('background', '#7272729d');
+        $(".opponent_select_service7").css('background', '#ffffff');
     });
+
+    $(".select_recive").click(function(){
+        $(".select_recive").css('background', '#7272729d');
+        $(".select_service").css('background', '#ffffff');
+        $(".opponent_select_service").css('background', '#7272729d');
+        $(".opponent_select_recive").css('background', '#ffffff');
+        $(".select_recive2").css('background', '#ffffff');
+        $(".select_service2").css('background', '#7272729d');
+        $(".opponent_select_service2").css('background', '#ffffff');
+        $(".opponent_select_recive2").css('background', '#7272729d');
+        $(".select_recive3").css('background', '#7272729d');
+        $(".select_service3").css('background', '#ffffff');
+        $(".opponent_select_service3").css('background', '#7272729d');
+        $(".opponent_select_recive3").css('background', '#ffffff');
+        $(".select_recive4").css('background', '#ffffff');
+        $(".select_service4").css('background', '#7272729d');
+        $(".opponent_select_service4").css('background', '#ffffff');
+        $(".opponent_select_recive4").css('background', '#7272729d');
+        $(".select_recive5").css('background', '#7272729d');
+        $(".select_service5").css('background', '#ffffff');
+        $(".opponent_select_service5").css('background', '#7272729d');
+        $(".opponent_select_recive5").css('background', '#ffffff');
+        $(".select_recive6").css('background', '#ffffff');
+        $(".select_service6").css('background', '#7272729d');
+        $(".opponent_select_service6").css('background', '#ffffff');
+        $(".opponent_select_recive6").css('background', '#7272729d');
+        $(".select_recive7").css('background', '#7272729d');
+        $(".select_service7").css('background', '#ffffff');
+        $(".opponent_select_service7").css('background', '#7272729d');
+        $(".opponent_select_recive7").css('background', '#ffffff');
+    });
+
+
 
     $(".next-button").hide();
     $(".back-button").hide();
