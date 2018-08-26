@@ -12,6 +12,7 @@
     var first_click = "off";
     var opponent_first_click = "off";
     var select_flg = "off";
+    var all_game;
     $(".cell"+game_count_cel[i]+"-"+point_count_cel[j]).css('background', 'rgba(150, 246, 253, 0.993)');
     $(".opponent_cell"+game_count_cel[i]+"-"+point_count_cel[j]).css('background', '#ff84d0'); 
     $(".next-button").click(function(){
@@ -26,17 +27,29 @@
     });
 
     $(".game-button").click(function(){
-        $(".cell"+game_count_cel[i]+"-"+point_count_cel[j]).css('background', '#ffffff');
-        $(".opponent_cell"+game_count_cel[i]+"-"+point_count_cel[j]).css('background', '#ffffff');
-        var i_increment = 1;
-            i = i+i_increment;
-            j = 0;
-            $(".cell"+game_count_cel[i]+"-"+point_count_cel[j]).css('background', 'rgba(150, 246, 253, 0.993)');
-            $(".opponent_cell"+game_count_cel[i]+"-"+point_count_cel[j]).css('background', '#ff84d0');
-            first_click = "off";
-            opponent_first_click = "off";
-            $(".game-button").hide();
-            $(".keep-button").show();
+        $.ajax({
+            url: "/scores/update",
+            type: "POST",
+            data: {content : all_game},
+            datatype: "json",
+            success: function(data){
+              //成功時の処理
+            },
+            error: function(data){
+              //失敗時の処理
+                $(".cell"+game_count_cel[i]+"-"+point_count_cel[j]).css('background', '#ffffff');
+                $(".opponent_cell"+game_count_cel[i]+"-"+point_count_cel[j]).css('background', '#ffffff');
+                var i_increment = 1;
+                i = i+i_increment;
+                j = 0;
+                $(".cell"+game_count_cel[i]+"-"+point_count_cel[j]).css('background', 'rgba(150, 246, 253, 0.993)');
+                $(".opponent_cell"+game_count_cel[i]+"-"+point_count_cel[j]).css('background', '#ff84d0');
+                first_click = "off";
+                opponent_first_click = "off";
+                $(".game-button").hide();
+                $(".keep-button").show();
+            }
+        });
     });
 
     $(".save-button").click(function(){
@@ -59,8 +72,8 @@
         if(flg == "on"){
             gon.points.push("○")
             gon.opponent_points.push("×")
-            gon.point_instance.game_one = gon.points
-            console.log(gon.point_instance.game_one);
+            all_game = gon.points;
+            console.log(all_game);
             
         }
         if(flg == "off"){

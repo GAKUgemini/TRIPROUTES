@@ -22,6 +22,13 @@ class ScoresController < ApplicationController
     end
 
     def update
+        @point = Point.new
+        @point.two_game = (params[:content])
+        if @point.save
+            redirect_to scores_display_path, notice: '登録完了！'
+        else
+            render :root
+        end
         
     end
 
@@ -29,4 +36,5 @@ class ScoresController < ApplicationController
     def player_params
         params.require(:player).permit(:baseline_player, :net_player,:baseline_player_opponent,:net_player_opponent,:Group_opponent,:Group,:Games_id)
     end
+
 end
