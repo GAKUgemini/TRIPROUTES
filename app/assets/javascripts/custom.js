@@ -57,13 +57,15 @@
         if(flg == "on"){
             gon.points.push("○")
             gon.opponent_points.push("×")
+            gon.point_instance.game_one = gon.points
+            console.log(gon.point_instance.game_one);
+            
         }
         if(flg == "off"){
             gon.points.push("×")
             gon.opponent_points.push("○")
         }
         }
-        console.log(gon.points);
     });
 
     $(".keep-button").click(function(){

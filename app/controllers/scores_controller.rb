@@ -16,12 +16,13 @@ class ScoresController < ApplicationController
     def display
         @player = Player.last
         @point = Point.new
+        gon.point_instance = Point.new
         gon.points = []
         gon.opponent_points = []
     end
 
     def update
-        @point = Point.new(game_one: params[:point][:game_one], game_one_opponent: params[:point][:game_one_opponent])
+        
     end
 
     private
