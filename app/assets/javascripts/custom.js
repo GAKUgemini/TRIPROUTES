@@ -21,6 +21,8 @@
         button_flg = "off";
         $(".cell"+game_count_cel[i]+"-"+point_count_cel[j]).css('background', 'rgba(150, 246, 253, 0.993)');
         $(".opponent_cell"+game_count_cel[i]+"-"+point_count_cel[j]).css('background', '#ff84d0');
+        $(".next-button").hide();
+        $(".back-button").hide();
     });
 
     $(".game-button").click(function(){
