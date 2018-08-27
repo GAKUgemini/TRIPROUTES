@@ -13,6 +13,9 @@
     var opponent_first_click = "off";
     var select_flg = "off";
     var all_game;
+    var game_points = [];
+    var opponent_game_points = [];
+    
     $(".cell"+game_count_cel[i]+"-"+point_count_cel[j]).css('background', 'rgba(150, 246, 253, 0.993)');
     $(".opponent_cell"+game_count_cel[i]+"-"+point_count_cel[j]).css('background', '#ff84d0'); 
     $(".next-button").click(function(){
@@ -27,6 +30,76 @@
     });
 
     $(".game-button").click(function(){
+        if(points == 4 && opponent_points == 0){
+            game_points.push(points);
+            opponent_game_points.push(opponent_points);
+            while(j > -1){
+            $(".opponent_cell"+game_count_cel[i]+"-"+point_count_cel[j]).removeClass("opponent_circle");
+            $(".cell"+game_count_cel[i]+"-"+point_count_cel[j]).removeClass("circle");
+            var j_decrement = 1;
+            j = j-j_decrement;
+            }
+        }
+        else if(points == 0 && opponent_points == 4){
+            game_points.push(points);
+            opponent_game_points.push(opponent_points);
+            while(j > -1){
+            $(".opponent_cell"+game_count_cel[i]+"-"+point_count_cel[j]).removeClass("opponent_circle");
+            $(".cell"+game_count_cel[i]+"-"+point_count_cel[j]).removeClass("circle");
+            var j_decrement = 1;
+            j = j-j_decrement;
+            }
+        }
+        else if(points == 4 && opponent_points == 1){
+            game_points.push(points);
+            opponent_game_points.push(opponent_points);
+            while(j > -1){
+            $(".opponent_cell"+game_count_cel[i]+"-"+point_count_cel[j]).removeClass("opponent_circle");
+            $(".cell"+game_count_cel[i]+"-"+point_count_cel[j]).removeClass("circle");
+            var j_decrement = 1;
+            j = j-j_decrement;
+            }
+        }
+        else if(points == 1 && opponent_points == 4){
+            game_points.push(points);
+            opponent_game_points.push(opponent_points);
+            while(j > -1){
+            $(".opponent_cell"+game_count_cel[i]+"-"+point_count_cel[j]).removeClass("opponent_circle");
+            $(".cell"+game_count_cel[i]+"-"+point_count_cel[j]).removeClass("circle");
+            var j_decrement = 1;
+            j = j-j_decrement;
+            }
+        }
+        else if(points == 2 && opponent_points == 4){
+            game_points.push(points);
+            opponent_game_points.push(opponent_points);
+            while(j > -1){
+            $(".opponent_cell"+game_count_cel[i]+"-"+point_count_cel[j]).removeClass("opponent_circle");
+            $(".cell"+game_count_cel[i]+"-"+point_count_cel[j]).removeClass("circle");
+            var j_decrement = 1;
+            j = j-j_decrement;
+            }
+        }
+        else if(points == 4 && opponent_points == 2){
+            game_points.push(points);
+            opponent_game_points.push(opponent_points);
+            while(j > -1){
+            $(".opponent_cell"+game_count_cel[i]+"-"+point_count_cel[j]).removeClass("opponent_circle");
+            $(".cell"+game_count_cel[i]+"-"+point_count_cel[j]).removeClass("circle");
+            var j_decrement = 1;
+            j = j-j_decrement;
+            }
+        }
+        else if(points >= 3 && opponent_points >= 3 && (points - opponent_points == 2 || opponent_points - points == 2)){ 
+            game_points.push(points);
+            opponent_game_points.push(opponent_points);
+            while(j > -1){
+            $(".opponent_cell"+game_count_cel[i]+"-"+point_count_cel[j]).removeClass("opponent_circle");
+            $(".cell"+game_count_cel[i]+"-"+point_count_cel[j]).removeClass("circle");
+            var j_decrement = 1;
+            j = j-j_decrement;
+            }
+        }
         $.ajax({
             url: "/scores/update",
             type: "POST",
