@@ -57,6 +57,10 @@
 
     $(".save-button").click(function(){
         if(points == 4 && opponent_points == 0 || points == 0 && opponent_points == 4 || points == 4 && opponent_points == 1 || points == 1 && opponent_points == 4 || points == 2 && opponent_points == 4 || points == 4 && opponent_points == 2 || points >= 3 && opponent_points >= 3 && (points - opponent_points == 2 || opponent_points - points == 2)){
+            gon.points.push("○")
+            gon.opponent_points.push("×")
+            all_point = gon.points;
+            all_point_opponent = gon.opponent_points;
             $(".game-button").show();
             $(".next-button").hide();
             $(".back-button").hide();
