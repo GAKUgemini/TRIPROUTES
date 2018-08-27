@@ -34,6 +34,7 @@
             datatype: "json",
             success: function(data){
               //成功時の処理
+              $(".game-button").hide();
             },
             error: function(data){
               //失敗時の処理
