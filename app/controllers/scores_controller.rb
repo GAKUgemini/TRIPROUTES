@@ -25,7 +25,7 @@ class ScoresController < ApplicationController
         @point = Point.new
         @point.two_game = (params[:content])
         if @point.save
-            redirect_to scores_display_path, notice: '登録完了！'
+            render :action => "display"
         else
             render :root
         end
