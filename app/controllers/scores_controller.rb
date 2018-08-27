@@ -22,8 +22,10 @@ class ScoresController < ApplicationController
     end
 
     def update
+        binding.pry
         @point = Point.new
-        @point.two_game = (params[:content])
+        @point.all_points = (params[:my_all_opint])
+        @point.all_points_opponent = (params[:opponent_all_point])
         @point.save
     end
 

@@ -30,7 +30,9 @@
         $.ajax({
             url: "/scores/update",
             type: "POST",
-            data: {content : all_game},
+            data: {my_all_opint : all_point,
+                opponent_all_point : all_point_opponent
+            },
             datatype: "json",
             success: function(data){
               //成功時の処理
@@ -73,7 +75,8 @@
         if(flg == "on"){
             gon.points.push("○")
             gon.opponent_points.push("×")
-            all_game = gon.points;
+            all_point = gon.points;
+            all_point_opponent = gon.opponent_points;
             console.log(all_game);
             
         }
