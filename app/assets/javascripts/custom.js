@@ -3,7 +3,7 @@
     $("h2").text("稼働中");
     var gameset = "off";
     var flg = "off"; 
-    var game_count_cel = [1,2,3,4,5,6,7];
+    var game_count_cel = [1,2,3,4,5,6,7,8];
     var point_count_cel = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28];
     var points = 0;
     var opponent_points = 0;
@@ -123,6 +123,34 @@
                 var initialize = 0;
                 points = initialize;
                 opponent_points = initialize;
+                if(game_count_cel[i] == 2){
+                $('.points-1').html(game_points[0]);
+                $('.opponent_points-1').html(opponent_game_points[0]);
+                }
+                else if(game_count_cel[i] == 3){
+                    $('.points-2').html(game_points[1]);
+                    $('.opponent_points-2').html(opponent_game_points[1]);
+                }
+                else if(game_count_cel[i] == 4){
+                    $('.points-3').html(game_points[2]);
+                    $('.opponent_points-3').html(opponent_game_points[2]);
+                }
+                else if(game_count_cel[i] == 5){
+                    $('.points-4').html(game_points[3]);
+                    $('.opponent_points-4').html(opponent_game_points[3]);
+                }
+                else if(game_count_cel[i] == 6){
+                    $('.points-5').html(game_points[4]);
+                    $('.opponent_points-5').html(opponent_game_points[4]);
+                }
+                else if(game_count_cel[i] == 7){
+                    $('.points-6').html(game_points[5]);
+                    $('.opponent_points-6').html(opponent_game_points[5]);
+                }
+                else if(game_count_cel[i] == 8){
+                    $('.points-7').html(game_points[6]);
+                    $('.opponent_points-7').html(opponent_game_points[6]);
+                }
             },
             error: function(data){
               //失敗時の処理
@@ -167,8 +195,6 @@
             gon.opponent_points.push("×")
             all_point = gon.points;
             all_point_opponent = gon.opponent_points;
-            console.log(all_game);
-            
         }
         if(flg == "off"){
             gon.points.push("×")
@@ -178,10 +204,6 @@
     });
 
     $(".keep-button").click(function(){
-        $('.points').html(game_points[0]);
-        $('.opponent_points').html(opponent_game_points[0]);
-        console.log(game_points[0]);
-        console.log(opponent_game_points[0]);
         $(".next-button").hide();
         $(".back-button").hide();
         $(".save-button").show();
@@ -194,15 +216,15 @@
             if(first_click == "off"){
                 $(".opponent_cell"+game_count_cel[i]+"-"+point_count_cel[j]).removeClass("opponent_circle");
                 opponent_points = $(".opponent_circle").length;
-                $(".points").text(points);
-                $(".opponent_points").text(opponent_points);
+                $(".points"+"-"+game_count_cel[i]).text(points);
+                $(".opponent_points"+"-"+game_count_cel[i]).text(opponent_points);
                 first_click = "on";
             }
             else{
                 $(".opponent_cell"+game_count_cel[i]+"-"+point_count_cel[j]).removeClass("opponent_circle");
                 opponent_points = $(".opponent_circle").length;
-                $(".points").text(points);
-                $(".opponent_points").text(opponent_points);
+                $(".points"+"-"+game_count_cel[i]).text(points);
+                $(".opponent_points"+"-"+game_count_cel[i]).text(opponent_points);
             }
         }else{
             $(".cell"+game_count_cel[i]+"-"+point_count_cel[j]).text("×");
@@ -213,15 +235,15 @@
             if(opponent_first_click == "off"){
                 $(".cell"+game_count_cel[i]+"-"+point_count_cel[j]).removeClass("circle");
                 points = $(".circle").length;
-                $(".points").text(points);
-                $(".opponent_points").text(opponent_points);
+                $(".points"+"-"+game_count_cel[i]).text(points);
+                $(".opponent_points"+"-"+game_count_cel[i]).text(opponent_points);
                 opponent_first_click = "on";
             }
             else{
                 $(".cell"+game_count_cel[i]+"-"+point_count_cel[j]).removeClass("circle");
                 points = $(".circle").length;
-                $(".points").text(points);
-                $(".opponent_points").text(opponent_points);
+                $(".points"+"-"+game_count_cel[i]).text(points);
+                $(".opponent_points"+"-"+game_count_cel[i]).text(opponent_points);
             }
         }
     });
