@@ -123,8 +123,6 @@
                 var initialize = 0;
                 points = initialize;
                 opponent_points = initialize;
-                console.log(points);
-                console.log(opponent_points);
             },
             error: function(data){
               //失敗時の処理
@@ -180,6 +178,10 @@
     });
 
     $(".keep-button").click(function(){
+        $('.points').html(game_points[0]);
+        $('.opponent_points').html(opponent_game_points[0]);
+        console.log(game_points[0]);
+        console.log(opponent_game_points[0]);
         $(".next-button").hide();
         $(".back-button").hide();
         $(".save-button").show();
