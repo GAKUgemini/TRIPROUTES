@@ -22,7 +22,6 @@ class ScoresController < ApplicationController
     end
 
     def update
-        binding.pry
         @point = Point.new
         @point.all_points = (params[:my_all_opint])
         @point.all_points_opponent = (params[:opponent_all_point])

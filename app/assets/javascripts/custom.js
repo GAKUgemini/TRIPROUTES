@@ -36,7 +36,22 @@
             datatype: "json",
             success: function(data){
               //成功時の処理
-              $(".game-button").hide();
+              $(".cell"+game_count_cel[i]+"-"+point_count_cel[j]).css('background', '#ffffff');
+                $(".opponent_cell"+game_count_cel[i]+"-"+point_count_cel[j]).css('background', '#ffffff');
+                var i_increment = 1;
+                i = i+i_increment;
+                j = 0;
+                $(".cell"+game_count_cel[i]+"-"+point_count_cel[j]).css('background', 'rgba(150, 246, 253, 0.993)');
+                $(".opponent_cell"+game_count_cel[i]+"-"+point_count_cel[j]).css('background', '#ff84d0');
+                first_click = "off";
+                opponent_first_click = "off";
+                $(".game-button").hide();
+                $(".keep-button").show();
+                var initialize = 0;
+                points = initialize;
+                opponent_points = initialize;
+                console.log(points);
+                console.log(opponent_points);
             },
             error: function(data){
               //失敗時の処理
