@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_08_26_083954) do
+ActiveRecord::Schema.define(version: 2018_08_27_044709) do
 
   create_table "favorites", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.integer "user_id"
@@ -32,22 +32,11 @@ ActiveRecord::Schema.define(version: 2018_08_26_083954) do
   end
 
   create_table "points", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.text "game_one"
-    t.text "game_three"
-    t.text "game_four"
-    t.text "game_five"
-    t.text "game_six"
-    t.text "game_final"
-    t.text "game_one_opponent"
-    t.text "game_two_opponent"
-    t.text "game_three_opponent"
-    t.text "game_four_opponent"
-    t.text "game_five_opponent"
-    t.text "game_six_opponent"
-    t.text "game_final_opponent"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "two_game"
+    t.string "all_points"
+    t.string "all_points_opponent"
   end
 
   create_table "topics", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
