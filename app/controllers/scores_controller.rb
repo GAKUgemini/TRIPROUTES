@@ -29,7 +29,8 @@ class ScoresController < ApplicationController
     end
 
     def result
-        
+        @player = Player.last
+        @point = Point.last
     end
 
     def index 
