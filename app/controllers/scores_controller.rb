@@ -28,6 +28,9 @@ class ScoresController < ApplicationController
         @point.save
     end
 
+    def index 
+    end
+
     private
     def player_params
         params.require(:player).permit(:baseline_player, :net_player,:baseline_player_opponent,:net_player_opponent,:Group_opponent,:Group,:Games_id)

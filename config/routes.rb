@@ -4,6 +4,7 @@ Rails.application.routes.draw do
    get 'scores/display'
    post 'scores/update'
    get 'favorites/index'
+   get 'scores/index'
    
    get 'sessions/new'
    
