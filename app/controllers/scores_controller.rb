@@ -28,6 +28,10 @@ class ScoresController < ApplicationController
         @point.save
     end
 
+    def result
+        
+    end
+
     def index 
     end
 

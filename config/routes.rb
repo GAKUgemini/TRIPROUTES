@@ -5,6 +5,7 @@ Rails.application.routes.draw do
    post 'scores/update'
    get 'favorites/index'
    get 'scores/index'
+   get 'scores/result'
    
    get 'sessions/new'
    

@@ -169,7 +169,7 @@
                     $(".back-button").hide();
                     $(".keep-button").hide();
                     $(".save-button").hide();
-                    $(".game-set-button").show();
+                    $(".result-link").show();
                 }
             },
             error: function(data){
@@ -337,5 +337,5 @@
     $(".back-button").hide();
     $(".save-button").hide();
     $(".game-button").hide();
-    $(".game-set-button").hide();
+    $(".result-link").hide();
   });
