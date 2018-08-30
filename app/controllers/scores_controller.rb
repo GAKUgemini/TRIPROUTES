@@ -19,19 +19,27 @@ class ScoresController < ApplicationController
         gon.point_instance = Point.new
         gon.points = []
         gon.opponent_points = []
+        gon.score_display_number = []
     end
 
     def update
         @point = Point.new
         @point.all_points = (params[:my_all_opint])
         @point.all_points_opponent = (params[:opponent_all_point])
-        @point.score_display_number = (params[:score_display_number])
+        @point.score_display_number = (params[:score_display_numbers])
+        @point.game_count = (params[:game_count])
         @point.save
     end
 
     def result
+        @point_last = Point.last
+        @point = Point.last(@point_last.game_count)
+        gon.game_count_array = []
+        while @point_last.game_count.to_i >= 0  do
+            gon.game_count_array.unshift(@point[@point_last.game_count.to_i])
+            @point_last.game_count = @point_last.game_count.to_i - 1
+        end
         @player = Player.last
-        @point = Point.last
     end
 
     def index 

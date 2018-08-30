@@ -16,7 +16,6 @@
     var opponent_game_points = [];
     var game_count = 0;
     var opponent_game_count = 0;
-    var score_display_number = [];
     var display_index = 0;
     
     $(".cell"+game_count_cel[i]+"-"+point_count_cel[j]).css('background', 'rgba(150, 246, 253, 0.993)');
@@ -44,7 +43,8 @@
             j = j-j_decrement;
             }
             sum = points+opponent_points
-            score_display_number.push(sum);
+            gon.score_display_number.push(sum);
+            score_display_number = gon.score_display_number;
         }
         else if(points == 0 && opponent_points == 4){
             opponent_game_count = opponent_game_count + 1;
@@ -57,7 +57,8 @@
             j = j-j_decrement;
             }
             sum = points+opponent_points
-            score_display_number.push(sum);
+            gon.score_display_number.push(sum);
+            score_display_number = gon.score_display_number;
         }
         else if(points == 4 && opponent_points == 1){
             game_count = game_count + 1;
@@ -70,7 +71,8 @@
             j = j-j_decrement;
             }
             sum = points+opponent_points
-            score_display_number.push(sum);
+            gon.score_display_number.push(sum);
+            score_display_number = gon.score_display_number;
         }
         else if(points == 1 && opponent_points == 4){
             opponent_game_count = opponent_game_count + 1;
@@ -83,7 +85,8 @@
             j = j-j_decrement;
             }
             sum = points+opponent_points
-            score_display_number.push(sum);
+            gon.score_display_number.push(sum);
+            score_display_number = gon.score_display_number;
         }
         else if(points == 2 && opponent_points == 4){
             opponent_game_count = opponent_game_count + 1;
@@ -96,7 +99,8 @@
             j = j-j_decrement;
             }
             sum = points+opponent_points
-            score_display_number.push(sum);
+            gon.score_display_number.push(sum);
+            score_display_number = gon.score_display_number;
         }
         else if(points == 4 && opponent_points == 2){
             game_count = game_count + 1;
@@ -109,7 +113,8 @@
             j = j-j_decrement;
             }
             sum = points+opponent_points
-            score_display_number.push(sum);
+            gon.score_display_number.push(sum);
+            score_display_number = gon.score_display_number;
         }
         else if(points >= 3 && opponent_points >= 3 && (points - opponent_points == 2 || opponent_points - points == 2)){
             if(points - opponent_points == 2){
@@ -127,19 +132,23 @@
             j = j-j_decrement;
             }
             sum = points+opponent_points
-            score_display_number.push(sum);
+            gon.score_display_number.push(sum);
+            score_display_number = gon.score_display_number;
         }
         $.ajax({
             url: "/scores/update",
             type: "POST",
             data: {my_all_opint : all_point,
                 opponent_all_point : all_point_opponent,
-                score_display_number : score_display_number[display_index]
+                score_display_numbers : score_display_number[display_index],
+                game_count : game_count_cel[i]
             },
             datatype: "json",
             success: function(data){
               //成功時の処理
-              $(".cell"+game_count_cel[i]+"-"+point_count_cel[j]).css('background', '#ffffff');
+                display_index = display_index+1;
+                console.log(score_display_number);
+                $(".cell"+game_count_cel[i]+"-"+point_count_cel[j]).css('background', '#ffffff');
                 $(".opponent_cell"+game_count_cel[i]+"-"+point_count_cel[j]).css('background', '#ffffff');
                 var i_increment = 1;
                 i = i+i_increment;
@@ -153,7 +162,6 @@
                 var initialize = 0;
                 points = initialize;
                 opponent_points = initialize;
-                display_index = display_index+1;
                 if(game_count_cel[i] == 2){
                 $('.points-1').html(game_points[0]);
                 $('.opponent_points-1').html(opponent_game_points[0]);
@@ -349,11 +357,34 @@
         $(".opponent_select_recive7").css('background', '#ffffff');
     });
 
-
-
     $(".next-button").hide();
     $(".back-button").hide();
     $(".save-button").hide();
     $(".game-button").hide();
     $(".result-link").hide();
+
+
+    //result.html.erb専用
+    $(".display-button").click(function(){
+        if (gon.game_count_array[gon.game_count_array.length-2].game_count == 7){
+
+        }
+        else if (gon.game_count_array[gon.game_count_array.length-2].game_count == 6){
+
+        }
+        else if (gon.game_count_array[gon.game_count_array.length-2].game_count == 5){
+
+        }
+        else if (gon.game_count_array[gon.game_count_array.length-2].game_count == 4){
+            for (  var x = 0;  x <= gon.game_count_array[gon.game_count_array.length-2].game_count;  x++  ) {
+
+                console.log(gon.game_count_array[0]);
+                for (  var y = 1;  y <= gon.game_count_array[x].score_display_number;  y++  ) {
+                    for (  var z = 2; x == gon.game_count_array[x].all_points.length-1;  z = z+5  ) {
+                        $(".cell"+gon.game_count_array[x].game_count+"-"+y).text(gon.game_count_array[x].all_points[x]);
+                    }
+                }
+            }
+        }
+    });
   });
