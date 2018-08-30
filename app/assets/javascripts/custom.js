@@ -16,6 +16,8 @@
     var opponent_game_points = [];
     var game_count = 0;
     var opponent_game_count = 0;
+    var score_display_number = [];
+    var display_index = 0;
     
     $(".cell"+game_count_cel[i]+"-"+point_count_cel[j]).css('background', 'rgba(150, 246, 253, 0.993)');
     $(".opponent_cell"+game_count_cel[i]+"-"+point_count_cel[j]).css('background', '#ff84d0'); 
@@ -41,6 +43,8 @@
             var j_decrement = 1;
             j = j-j_decrement;
             }
+            sum = points+opponent_points
+            score_display_number.push(sum);
         }
         else if(points == 0 && opponent_points == 4){
             opponent_game_count = opponent_game_count + 1;
@@ -52,6 +56,8 @@
             var j_decrement = 1;
             j = j-j_decrement;
             }
+            sum = points+opponent_points
+            score_display_number.push(sum);
         }
         else if(points == 4 && opponent_points == 1){
             game_count = game_count + 1;
@@ -63,6 +69,8 @@
             var j_decrement = 1;
             j = j-j_decrement;
             }
+            sum = points+opponent_points
+            score_display_number.push(sum);
         }
         else if(points == 1 && opponent_points == 4){
             opponent_game_count = opponent_game_count + 1;
@@ -74,6 +82,8 @@
             var j_decrement = 1;
             j = j-j_decrement;
             }
+            sum = points+opponent_points
+            score_display_number.push(sum);
         }
         else if(points == 2 && opponent_points == 4){
             opponent_game_count = opponent_game_count + 1;
@@ -85,6 +95,8 @@
             var j_decrement = 1;
             j = j-j_decrement;
             }
+            sum = points+opponent_points
+            score_display_number.push(sum);
         }
         else if(points == 4 && opponent_points == 2){
             game_count = game_count + 1;
@@ -96,6 +108,8 @@
             var j_decrement = 1;
             j = j-j_decrement;
             }
+            sum = points+opponent_points
+            score_display_number.push(sum);
         }
         else if(points >= 3 && opponent_points >= 3 && (points - opponent_points == 2 || opponent_points - points == 2)){
             if(points - opponent_points == 2){
@@ -112,12 +126,15 @@
             var j_decrement = 1;
             j = j-j_decrement;
             }
+            sum = points+opponent_points
+            score_display_number.push(sum);
         }
         $.ajax({
             url: "/scores/update",
             type: "POST",
             data: {my_all_opint : all_point,
-                opponent_all_point : all_point_opponent
+                opponent_all_point : all_point_opponent,
+                score_display_number : score_display_number[display_index]
             },
             datatype: "json",
             success: function(data){
@@ -136,6 +153,7 @@
                 var initialize = 0;
                 points = initialize;
                 opponent_points = initialize;
+                display_index = display_index+1;
                 if(game_count_cel[i] == 2){
                 $('.points-1').html(game_points[0]);
                 $('.opponent_points-1').html(opponent_game_points[0]);

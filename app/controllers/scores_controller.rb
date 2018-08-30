@@ -25,6 +25,7 @@ class ScoresController < ApplicationController
         @point = Point.new
         @point.all_points = (params[:my_all_opint])
         @point.all_points_opponent = (params[:opponent_all_point])
+        @point.score_display_number = (params[:score_display_number])
         @point.save
     end
 
