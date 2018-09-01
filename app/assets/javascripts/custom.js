@@ -377,10 +377,8 @@
         }
         else if (gon.game_count_array[gon.game_count_array.length-2].game_count == 4){
             for (  var x = 0;  x <= gon.game_count_array[gon.game_count_array.length-2].game_count;  x++  ) {
-
-                console.log(gon.game_count_array[0]);
                 for (  var y = 1;  y <= gon.game_count_array[x].score_display_number;  y++  ) {
-                    for (  var z = 2; x == gon.game_count_array[x].all_points.length-1;  z = z+5  ) {
+                    for (  var z = 2; z == gon.game_count_array[x].all_points.length-1;  z = z+5  ) {
                         $(".cell"+gon.game_count_array[x].game_count+"-"+y).text(gon.game_count_array[x].all_points[x]);
                     }
                 }

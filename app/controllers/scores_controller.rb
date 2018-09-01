@@ -34,11 +34,19 @@ class ScoresController < ApplicationController
     def result
         @point_last = Point.last
         @point = Point.last(@point_last.game_count)
+        gon.game_count = @point_last.game_count
         gon.game_count_array = []
+        gon.score_display_number = []
+        flg = @point[gon.game_count.to_i-1].game_count.to_i
         while @point_last.game_count.to_i >= 0  do
             gon.game_count_array.unshift(@point[@point_last.game_count.to_i])
             @point_last.game_count = @point_last.game_count.to_i - 1
         end
+        while flg >= 1 do
+        gon.score_display_number.unshift(@point[gon.game_count.to_i-1].score_display_number)
+        flg = flg-1
+        end
+
         @player = Player.last
     end
 
