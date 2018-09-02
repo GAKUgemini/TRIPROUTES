@@ -365,6 +365,12 @@
 
 
     //result.html.erb専用
+    var emergency_index = 0;
+    var emergency_increment = 1;
+    var x = 0;
+    var xincrement = 1;
+    var y = 0
+    var yincrement = 1;
     $(".display-button").click(function(){
         if (gon.game_count_array[gon.game_count_array.length-2].game_count == 7){
 
@@ -376,13 +382,15 @@
 
         }
         else if (gon.game_count_array[gon.game_count_array.length-2].game_count == 4){
-            for (  var x = 0;  x <= gon.game_count_array[gon.game_count_array.length-2].game_count;  x++  ) {
-                for (  var z = 0; z != gon.all_points.length+1;  z++  ) {//gon.all_points.lengthは１試合分の総合経過得点
-                    for (  var y = 0;  y <= gon.score_display_number[y];  y++ ) {
-                        $(".cell"+gon.game_count_array[x].game_count+"-"+(y+1)).text(gon.all_points[z]);
-                        $(".opponent_cell"+gon.game_count_array[x].game_count+"-"+(y+1)).text(gon.all_points_opponent[z]);
-                    }
+            for (var z = 0; z != gon.all_points.length+1; z++ ) {
+                if ( gon.score_display_number[emergency_index] == z-1){
+                    emergency_index = emergency_index+emergency_increment;
+                    x = x+xincrement;
+                    y = 0;
                 }
+                $(".cell"+gon.game_count_array[x].game_count+"-"+(y+1)).text(gon.all_points[z]);
+                $(".opponent_cell"+gon.game_count_array[x].game_count+"-"+(y+1)).text(gon.all_points_opponent[z]);
+                y = y+yincrement;
             }
         }
     });

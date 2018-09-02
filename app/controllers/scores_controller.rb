@@ -47,17 +47,14 @@ class ScoresController < ApplicationController
             @point_last.game_count = @point_last.game_count.to_i - 1
         end
         while flg >= 1 do
-            gon.score_display_number.unshift(@point[gon.game_count.to_i-1].score_display_number)
+            gon.score_display_number.push(@point[gon.game_count.to_i-1].score_display_number)
             flg = flg-1
         end
         while point_flg >= point_index do
-            gon.all_points.unshift(@point_last.all_points[point_index])
-            gon.all_points_opponent.unshift(@point_last.all_points_opponent[point_index])
+            gon.all_points.push(@point_last.all_points[point_index])
+            gon.all_points_opponent.push(@point_last.all_points_opponent[point_index])
             point_index = point_index+5
         end
-
-        
-
         @player = Player.last
     end
 
