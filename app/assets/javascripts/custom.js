@@ -375,13 +375,46 @@
     var zaincrement = 1;
     $(".display-button").click(function(){
         if (gon.game_count_array[gon.game_count_array.length-2].game_count == 7){
-
+            for (var z = 0; z != gon.all_points.length+1; z++ ) {
+                if ( gon.score_display_number[emergency_index] == za){
+                    emergency_index = emergency_index+emergency_increment;
+                    x = x+xincrement;
+                    y = 0;
+                    za =0;
+                }
+                $(".cell"+gon.game_count_array[x].game_count+"-"+(y+1)).text(gon.all_points[z]);
+                $(".opponent_cell"+gon.game_count_array[x].game_count+"-"+(y+1)).text(gon.all_points_opponent[z]);
+                y = y+yincrement;
+                za = za+zaincrement; 
+            }
         }
         else if (gon.game_count_array[gon.game_count_array.length-2].game_count == 6){
-
+            for (var z = 0; z != gon.all_points.length+1; z++ ) {
+                if ( gon.score_display_number[emergency_index] == za){
+                    emergency_index = emergency_index+emergency_increment;
+                    x = x+xincrement;
+                    y = 0;
+                    za =0;
+                }
+                $(".cell"+gon.game_count_array[x].game_count+"-"+(y+1)).text(gon.all_points[z]);
+                $(".opponent_cell"+gon.game_count_array[x].game_count+"-"+(y+1)).text(gon.all_points_opponent[z]);
+                y = y+yincrement;
+                za = za+zaincrement; 
+            }
         }
         else if (gon.game_count_array[gon.game_count_array.length-2].game_count == 5){
-
+            for (var z = 0; z != gon.all_points.length+1; z++ ) {
+                if ( gon.score_display_number[emergency_index] == za){
+                    emergency_index = emergency_index+emergency_increment;
+                    x = x+xincrement;
+                    y = 0;
+                    za =0;
+                }
+                $(".cell"+gon.game_count_array[x].game_count+"-"+(y+1)).text(gon.all_points[z]);
+                $(".opponent_cell"+gon.game_count_array[x].game_count+"-"+(y+1)).text(gon.all_points_opponent[z]);
+                y = y+yincrement;
+                za = za+zaincrement; 
+            }
         }
         else if (gon.game_count_array[gon.game_count_array.length-2].game_count == 4){
             for (var z = 0; z != gon.all_points.length+1; z++ ) {
