@@ -47,7 +47,7 @@ class ScoresController < ApplicationController
             @point_last.game_count = @point_last.game_count.to_i - 1
         end
         while flg >= 1 do
-            gon.score_display_number.push(@point[gon.game_count.to_i-1].score_display_number)
+            gon.score_display_number.unshift(@point[flg-1].score_display_number)
             flg = flg-1
         end
         while point_flg >= point_index do
