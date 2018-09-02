@@ -377,10 +377,10 @@
         }
         else if (gon.game_count_array[gon.game_count_array.length-2].game_count == 4){
             for (  var x = 0;  x <= gon.game_count_array[gon.game_count_array.length-2].game_count;  x++  ) {
-                for (  var z = 0; z == gon.all_points.length+1;  z++  ) {
-                    console.log("came");
+                for (  var z = 0; z != gon.all_points.length+1;  z++  ) {//gon.all_points.lengthは１試合分の総合経過得点
                     for (  var y = 0;  y <= gon.score_display_number[y];  y++ ) {
-                        $(".cell"+gon.game_count_array[x].game_count+"-"+y+1).text(gon.game_count_array[x].all_points[x]);
+                        $(".cell"+gon.game_count_array[x].game_count+"-"+(y+1)).text(gon.all_points[z]);
+                        $(".opponent_cell"+gon.game_count_array[x].game_count+"-"+(y+1)).text(gon.all_points_opponent[z]);
                     }
                 }
             }
