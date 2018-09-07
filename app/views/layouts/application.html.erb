@@ -28,14 +28,11 @@
     <%= link_to root_path do %>
       <span><%= image_tag "icons/logo.png", class: "navbar-brand" %></span>
     <% end %>
-    <%= link_to scores_display_path do %>
-      <span><%= image_tag "icons/logo.png", class: "navbar-brand" %></span>
-    <% end %>
     <ul class="nav navbar-nav navbar-right">
       <% if logged_in? %>
         <li>
-          <%= link_to users_path do %>
-            <%= image_tag "icons/userlist.png" %>
+          <%= link_to scores_display_path do %>
+            <%= image_tag "icons/score.png" %>
           <% end %>
         </li>
         <li>
